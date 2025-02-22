@@ -130,6 +130,7 @@ header {
     display: block;
     margin: 1rem 0 0;
     padding: 0 1rem;
+    text-transform: capitalize;
 }
 
 .details {
@@ -160,6 +161,8 @@ header {
 
 .item-pic {
     width: 25%;
+    min-height: 67px;
+    padding: .5rem;
     border-radius: 10px;
     background-color: #ebebeb;
 }
