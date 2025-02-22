@@ -100,13 +100,14 @@ header {
     gap: 9px;
 }
 
-#category-menu button {
+.menu-btn {
     border: 1px solid #e9e9e9;
     padding: .5rem 1rem;
     border-radius: 1rem;
     background-color: transparent;
     cursor: pointer;
     color: #ababab;
+    text-transform: capitalize;
 }
 
 #category-menu button.active {
@@ -143,6 +144,12 @@ header {
 
 .item-desc {
     color: #7E8392;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /*Limita a 2 linhas*/
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
 }
 
 .price {
