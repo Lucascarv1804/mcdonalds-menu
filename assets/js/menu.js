@@ -170,8 +170,8 @@ function displayMenuItems(menuItems) {
 }
 
 window.addEventListener('DOMContentLoaded', () => {
-    const defaultCategory = menu.filter(item => item.category === 'combos')
-    displayMenuItems(defaultCategory);
+    displayMenuItems(menu);
+
 });
 
 // filtro
@@ -183,10 +183,11 @@ menuBtns.forEach((btn) => {
         btn.classList.add('active');
 
         const dataId = btn.dataset.id;
+        console.log('Data ID:', dataId);  // Adicionando um log para verificar o valor de data-id
         let filterMenu;
 
-        if (dataId === 'combos') {
-            filterMenu = menu.filter(item => item.category === 'combos');
+        if (dataId === 'all') {
+            filterMenu = menu; // Se 'all', mostra todos os itens
         } else {
             filterMenu = menu.filter(item => item.category === dataId);
         }
