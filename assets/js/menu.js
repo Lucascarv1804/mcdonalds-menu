@@ -146,11 +146,11 @@ const menu = [
     }
 ];
 
-
 const menuContainer = document.getElementById('menu-items');
 
 function displayMenuItems(menuItems) {
-    let categoryTitle = `<span class="menu-title">${menuItems[0].category}</span>`;
+    // let categoryTitle = `<span class="menu-title">${menuItems[0].category}</span>`;
+    // Solucao temporaria para o titulo das categorias
 
     let displayMenu = menuItems.map((item) => {
         return `
@@ -166,12 +166,11 @@ function displayMenuItems(menuItems) {
         `;
     }).join('');
 
-    menuContainer.innerHTML = categoryTitle + displayMenu;
+    menuContainer.innerHTML = displayMenu;
 }
 
 window.addEventListener('DOMContentLoaded', () => {
     displayMenuItems(menu);
-
 });
 
 // filtro
