@@ -148,13 +148,12 @@ const menu = [
 
 const menuContainer = document.getElementById('menu-items');
 
+// let categoryTitle = `<span class="menu-title">${menuItems[0].category}</span>`;
+// Solucao temporaria para o titulo das categorias
 function displayMenuItems(menuItems) {
-    // let categoryTitle = `<span class="menu-title">${menuItems[0].category}</span>`;
-    // Solucao temporaria para o titulo das categorias
-
     let displayMenu = menuItems.map((item) => {
         return `
-            <div class="item">
+            <div class="item" data-id="${item.id}">
                 <div class="details">
                     <p class="item-title">${item.title}</p>
                     <p class="item-desc">${item.desc}</p>
@@ -167,7 +166,22 @@ function displayMenuItems(menuItems) {
     }).join('');
 
     menuContainer.innerHTML = displayMenu;
+
+    // Adicionar evento de clique para cada item
+    document.querySelectorAll('.item').forEach((item) => {
+        item.addEventListener('click', () => {
+            const itemId = item.getAttribute('data-id');
+            const selectedItem = menu.find(prod => prod.id == itemId);
+            
+            // Armazenar os detalhes no localStorage
+            localStorage.setItem('selectedProduct', JSON.stringify(selectedItem));
+
+            // Redirecionar para product.html
+            window.location.href = 'product.html';
+        });
+    });
 }
+
 
 window.addEventListener('DOMContentLoaded', () => {
     displayMenuItems(menu);
@@ -182,11 +196,10 @@ menuBtns.forEach((btn) => {
         btn.classList.add('active');
 
         const dataId = btn.dataset.id;
-        console.log('Data ID:', dataId);  // Adicionando um log para verificar o valor de data-id
         let filterMenu;
 
         if (dataId === 'all') {
-            filterMenu = menu; // Se 'all', mostra todos os itens
+            filterMenu = menu;
         } else {
             filterMenu = menu.filter(item => item.category === dataId);
         }

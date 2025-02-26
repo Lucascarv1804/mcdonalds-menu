@@ -29,7 +29,6 @@ header {
     display: flex;
     justify-content: space-between;
     padding: 1.3rem;
-    
 }
 
 .header-btn {
@@ -39,16 +38,17 @@ header {
     display: grid;
     place-items: center;
     border-radius: 50%;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
     color: #323232;
+}
+
+.header-btn:hover {
+    background-color: #e3e3e3;
 }
 
 /* restaurant info */
 #restaurant-info {
-    display: flex;
-    flex-direction: column;
     padding: 1rem;
-    gap: 1rem;
     border-bottom: 1px solid #e9e9e9;
 }
 
@@ -56,6 +56,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-bottom: 1rem;
 }
 
 .logo {
@@ -123,6 +124,7 @@ header {
     justify-content: space-between;
     padding: 1rem;
     border-bottom: 1px solid #e9e9e9;
+    cursor: pointer;
 }
 
 .menu-title {

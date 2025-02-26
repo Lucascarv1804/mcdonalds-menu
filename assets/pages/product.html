@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página do Produto</title>
+    <!-- CSS File -->
+    <link rel="stylesheet" href="../css/product.css">
+    <!-- JS File -->
+    <script src="../js/product.js" defer></script>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- favicon -->
+    <link rel="shortcut icon" href="../images/svg/mcdonalds-logo.svg" type="image/x-icon">
+</head>
+
+<body>
+    <div id="container">
+        <header>
+            <div class="header-btns">
+                <a class="header-btn" href="../pages/menu.html">
+                    <i class="bi bi-caret-left-fill"></i>
+                </a>
+    
+                <a class="header-btn" href="#">
+                    <img src="../images/svg/scroll-text.svg">
+                </a>
+            </div>
+
+            <img class="product-img" src="" alt="lanche">
+        </header>
+
+        <section id="product-info">
+            <p class="logo">
+                <img src="../images/svg/mcdonalds-logo.svg" alt="logo">
+                Mc Donald's
+            </p>
+            <p class="product-title"></p>
+
+            <div class="price-container">
+                <p class="price"></p>
+
+                <div class="quantity-selector">
+                    <button class="decrease">-</button>
+                    <span class="quantity">1</span>
+                    <button class="increase">+</button>
+                </div>
+            </div>
+
+            <p id="about" class="subtitle">Sobre</p>
+            <p class="product-description">Quatro hambúrgueres (100% carne bovina), alface americana, queijo fatiado sabor cheddar, molho especial, cebola, picles e pão com gergilim, acompanhamento e bebida</p>
+
+            <button class="add-to-cart">Adicionar à Sacola</button>
+        </section>
+    </div>
+</body>
+
+</html>
