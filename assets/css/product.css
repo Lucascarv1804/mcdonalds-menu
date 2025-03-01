@@ -14,6 +14,19 @@ body {
     color: #323232;
 }
 
+/* Padronização de alguns botões */
+.btn {
+    width: 35px;
+    height: 35px;
+    font-size: 1.1rem;
+    background-color: transparent;
+    border: 1px solid #e9e9e9;
+    transition: all .3s;
+    cursor: pointer;
+    font-style: bold;
+    border-radius: 10px;
+}
+
 #container {
     max-width: 430px;
     width: 100%;
@@ -21,6 +34,7 @@ body {
     color: #323232;
     font-size: 18px;
     background-color: #fff;
+    position: relative;
 }
 
 /* header */
@@ -105,23 +119,13 @@ header {
     gap: 15px;
 }
 
-.decrease, .increase {
-    width: 25px;
-    height: 25px;
-    background-color: transparent;
-    border: 1px solid #e9e9e9;
-    transition: all .3s;
-    cursor: pointer;
-    font-style: bold;
-}
-
 .increase {
-    background-color: red;
+    background-color: #D52B1E;
     color: #fff;
     border: none;
 }
 
-.decrease:hover {
+.decrease:hover, .trash:hover {
     background-color: #e8e8e8;
 }
 
@@ -154,10 +158,97 @@ header {
     border: none;
     border-radius: 30px;
     cursor: pointer;
+    transition: background-color .3s;
 }
 
 .add-to-cart:hover {
     background: #e6a800;
+}
+
+/* CART CSS */
+.shadow {
+    width: 100%;
+    height: 100%;
+    background-color: #0000007d;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+}
+
+.shadow.active {
+    display: block;
+}
+
+.cart {
+    position: absolute;
+    background-color: #fff;
+    min-height: 100vh;
+    width: 80%;
+    right: 0;
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    margin-bottom: 1rem
+}
+
+.bi-x {
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.order-item {
+    display: flex;
+    gap: 10px;
+}
+
+.order-item-img {
+    width: 80px;
+    height: 80px;
+    background-color: #EBEBEB;
+    object-fit: cover;
+    padding: .5rem;
+    border-radius: 10px;
+}
+
+.order-item-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.order-item-info p {
+    font-size: 13px;
+    width: 80%;
+    white-space: nowrap; /* Impede a quebra de linha */
+    overflow: hidden; /* Esconde o excesso de texto */
+    text-overflow: ellipsis; /* Adiciona "..." no final */
+}
+
+.order-item-price {
+    font-weight: 600;
+}
+
+.order-item-btns {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.quantity {
+    font-size: 1.2rem;
+}
+
+.trash {
+    margin-left: auto;
 }
 
 /* responsividade */

@@ -1,34 +1,3 @@
-const decreaseBtn = document.querySelector('.decrease');
-const increaseBtn = document.querySelector('.increase');
-const quantity = document.querySelector('.quantity');
-const price = document.querySelector('.price');
-
-let count = 1;
-let priceNum = parseFloat(price.textContent);
-console.log(priceNum)
-let actualPrice = priceNum;
-console.log(actualPrice);
-
-increaseBtn.addEventListener('click', () => {
-    count++;
-    quantity.innerHTML = count;
-
-    actualPrice += priceNum;
-    price.textContent = actualPrice.toFixed(2);
-});
-
-decreaseBtn.addEventListener('click', () => {
-    count--;
-    if (count < 1) {
-        count = 1;
-        return;
-    }
-    quantity.innerHTML = count;
-
-    actualPrice -= priceNum;
-    price.textContent = actualPrice.toFixed(2);
-});
-
 document.addEventListener('DOMContentLoaded', () => {
     const productInfo = JSON.parse(localStorage.getItem('selectedProduct'));
 
@@ -46,3 +15,20 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log('Nenhum produto selecionado!');
     }
 });
+
+// Adicionar item ao carrinho e abrir/fechar o carrinho
+const cartContainer = document.querySelector('.shadow');
+const addToCartBtn = document.querySelector('.add-to-cart');
+const closeCartBtn = document.querySelector('.close-cart');
+
+addToCartBtn.addEventListener('click', () => {
+    cartContainer.classList.add('active');
+});
+
+closeCartBtn.addEventListener('click', () => {
+    cartContainer.classList.remove('active');
+});
+
+cartContainer.addEventListener('click', () => {
+    cartContainer.classList.remove('active');
+})

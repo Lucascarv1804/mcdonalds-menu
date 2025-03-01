@@ -22,7 +22,7 @@
                 <a class="header-btn" href="../pages/menu.html">
                     <i class="bi bi-caret-left-fill"></i>
                 </a>
-    
+
                 <a class="header-btn" href="#">
                     <img src="../images/svg/scroll-text.svg">
                 </a>
@@ -42,17 +42,50 @@
                 <p class="price"></p>
 
                 <div class="quantity-selector">
-                    <button class="decrease">-</button>
+                    <button class="btn decrease">-</button>
                     <span class="quantity">1</span>
-                    <button class="increase">+</button>
+                    <button class="btn increase">+</button>
                 </div>
             </div>
 
             <p id="about" class="subtitle">Sobre</p>
-            <p class="product-description">Quatro hambúrgueres (100% carne bovina), alface americana, queijo fatiado sabor cheddar, molho especial, cebola, picles e pão com gergilim, acompanhamento e bebida</p>
+            <p class="product-description">Quatro hambúrgueres (100% carne bovina), alface americana, queijo fatiado
+                sabor cheddar, molho especial, cebola, picles e pão com gergilim, acompanhamento e bebida</p>
 
             <button class="add-to-cart">Adicionar à Sacola</button>
         </section>
+
+        <div class="shadow">
+            <div class="cart">
+                <p class="title">
+                    Sacola
+                    <i class="bi bi-x close-cart" aria-label="Fechar sacola"></i>
+                </p>
+
+                <div class="orders">
+                    <div class="order-item">
+                        <img class="order-item-img" src="../images/burgers/combo-bigmac-duplo.png">
+
+                        <div class="order-item-content">
+                            <div class="order-item-info">
+                                <p class="order-item-name">McOferta média Big Mac Duplo</p>
+                                <p class="order-item-price">R$39.90</p>
+                            </div>
+
+                            <div class="order-item-btns">
+                                <button class="btn decrease">-</button>
+                                <span class="quantity">1</span>
+                                <button class="btn increase">+</button>
+
+                                <button class="btn trash">
+                                    <i class="bi bi-trash3"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 
