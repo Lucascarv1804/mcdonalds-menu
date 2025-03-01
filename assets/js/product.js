@@ -25,10 +25,38 @@ addToCartBtn.addEventListener('click', () => {
     cartContainer.classList.add('active');
 });
 
-closeCartBtn.addEventListener('click', () => {
+closeCartBtn.addEventListener('click', (e) => {
     cartContainer.classList.remove('active');
 });
 
-cartContainer.addEventListener('click', () => {
-    cartContainer.classList.remove('active');
-})
+cartContainer.addEventListener('click', (e) => {
+    if (e.target === cartContainer) {
+        cartContainer.classList.remove('active');
+    }
+});
+
+// funcionamento dos botoes
+const actionBtns = document.querySelectorAll('.btn');
+const quantity = document.querySelector('.quantity');
+
+let counter = 1;
+
+actionBtns.forEach((btn) => {
+
+    btn.addEventListener('click', (e) => {
+
+        if(btn.classList.contains('increase')) {
+            counter++;
+            quantity.textContent = counter;
+        } else if(btn.classList.contains('decrease')) {
+            if(counter <= 1) {
+                return
+            } else {
+                counter--;
+                quantity.textContent = counter;
+            }
+
+        }
+    });
+
+});
