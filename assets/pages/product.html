@@ -55,36 +55,58 @@
             <button class="add-to-cart">Adicionar à Sacola</button>
         </section>
 
+        
         <div class="shadow">
-            <div class="cart">
+            <section class="cart">
                 <p class="title">
                     Sacola
                     <i class="bi bi-x close-cart" aria-label="Fechar sacola"></i>
                 </p>
-
-                <div class="orders">
+                
+                <section class="orders">
                     <div class="order-item">
                         <img class="order-item-img" src="../images/burgers/combo-bigmac-duplo.png">
-
+                        
                         <div class="order-item-content">
                             <div class="order-item-info">
                                 <p class="order-item-name">McOferta média Big Mac Duplo</p>
                                 <p class="order-item-price">R$39.90</p>
                             </div>
-
+                            
                             <div class="order-item-btns">
-                                <button class="btn decrease">-</button>
-                                <span class="quantity">1</span>
-                                <button class="btn increase">+</button>
-
+                                <button class="btn cart-decrease">-</button>
+                                <span class="cart-quantity">1</span>
+                                <button class="btn cart-increase">+</button>
+                                
                                 <button class="btn trash">
                                     <i class="bi bi-trash3"></i>
                                 </button>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
+                </section>
+
+                <section class="cart-summary">
+                    <div class="summary-container">
+                        <p class="cart-summary-item">
+                            Subtotal
+                            <span id="subtotal">R$39,90</span>
+                        </p>
+    
+                        <p class="cart-summary-item">
+                            Descontos
+                            <span id="discounts">R$0,00</span>
+                        </p>
+    
+                        <p class="cart-summary-item">
+                            Total
+                            <span id="total">R$39,90</span>
+                        </p>
+                    </div>
+
+                    <button class="checkout-btn">Finalizar o Pedido</button>
+                </section>
+            </section>
         </div>
     </div>
 </body>

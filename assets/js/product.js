@@ -20,9 +20,14 @@ document.addEventListener('DOMContentLoaded', () => {
 const cartContainer = document.querySelector('.shadow');
 const addToCartBtn = document.querySelector('.add-to-cart');
 const closeCartBtn = document.querySelector('.close-cart');
+const cart = JSON.parse(localStorage.getItem('cart')) || [];
 
 addToCartBtn.addEventListener('click', () => {
     cartContainer.classList.add('active');
+
+    cartCounter += counter;
+
+    cartQuantity.textContent = cartCounter;
 });
 
 closeCartBtn.addEventListener('click', (e) => {
@@ -35,28 +40,32 @@ cartContainer.addEventListener('click', (e) => {
     }
 });
 
-// funcionamento dos botoes
+// funcionamento dos botoes decrease e increase do product
 const actionBtns = document.querySelectorAll('.btn');
 const quantity = document.querySelector('.quantity');
+const cartQuantity = document.querySelector('.cart-quantity');
 
 let counter = 1;
+let cartCounter = 0;
 
 actionBtns.forEach((btn) => {
-
-    btn.addEventListener('click', (e) => {
-
+    btn.addEventListener('click', () => {
         if(btn.classList.contains('increase')) {
             counter++;
-            quantity.textContent = counter;
-        } else if(btn.classList.contains('decrease')) {
-            if(counter <= 1) {
-                return
-            } else {
-                counter--;
-                quantity.textContent = counter;
-            }
-
+        } else if(btn.classList.contains('decrease') && counter > 1) {
+            counter--;
         }
+        quantity.textContent = counter;
     });
+});
 
+actionBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+        if(btn.classList.contains('cart-increase')) {
+            cartCounter++;
+        } else if(btn.classList.contains('cart-decrease') && cartCounter > 1) {
+            cartCounter--;
+        }
+        cartQuantity.textContent = cartCounter;
+    });
 });
